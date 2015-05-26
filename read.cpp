@@ -9,8 +9,8 @@
 using namespace std;
 using namespace cv;
 
-double (*getPoints(string filename))[2][83] {
-  static double pts[2][83];
+vector<vector<double> > getPoints(string filename) {
+  vector<vector<double> > pts(2, vector<double>(83));
   string str;
   string path = "images/";
   path += filename;
@@ -26,43 +26,39 @@ double (*getPoints(string filename))[2][83] {
     }
   }
   ifs.close();
-  return &pts;
+  return pts;
 }
 
 int main() {
   string str;
   
-  static double (*landmarks)[2][83] = getPoints("example.txt");
-  static double (*destinations)[2][83] = getPoints("obama.txt");
+  vector<vector<double> > landmarks = getPoints("example.txt");
+  vector<vector<double> > destinations = getPoints("input.txt");
 
   Mat image;
   
   std::vector<Point> points, dests;
 
   for(int i=0; i<83; i++) {
-    points.push_back(cv::Point((*landmarks)[0][i], (*landmarks)[1][i]));
+    points.push_back(cv::Point((landmarks)[0][i], (landmarks)[1][i]));
   }
 
   
   for(int i=0; i<83; i++) {
-    dests.push_back(cv::Point((*destinations)[0][i], (*destinations)[1][i]));
-  }
-
-  for(int i=0; i<83; i++) {
-    cout << "point: " << i << endl;
-    cout << ((*landmarks)[0][i]) << " : " << ((*landmarks)[1][i]) << endl;
-    cout << ((*destinations)[0][i]) << " : " << ((*destinations)[1][i]) << endl;
+    dests.push_back(cv::Point((destinations)[0][i], (destinations)[1][i]));
   }
 
 
   CThinPlateSpline tps(points, dests);
 
   Mat img = imread("./images/example.jpg");
+  Mat canv = imread("./images/input.jpg");
   Mat dst;
-  tps.warpImage(img,dst,INTER_CUBIC, BACK_WARP);
+  tps.warpImage(img,dst,INTER_AREA, FORWARD_WARP);
 
-  namedWindow( "Display window", WINDOW_AUTOSIZE );
-  imshow("Display window", dst);
+  imshow("Original", img);
+  imshow("Warped", dst);
+  imshow("Model", canv);
 
   waitKey(0); 
   return 0;
