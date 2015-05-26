@@ -12,9 +12,9 @@ using namespace cv;
 double (*getPoints(string filename))[2][83] {
   static double pts[2][83];
   string str;
-  string path = "images/";
+  str path = "images/";
   path += filename;
-  ifstream ifs(path.c_str());
+  ifstream ifs(path)
   if (ifs.is_open()) {
     for (int i=0; i<83; i++){
       getline(ifs, str);
@@ -25,15 +25,14 @@ double (*getPoints(string filename))[2][83] {
       pts[1][i] = atof(str.c_str());
     }
   }
-  ifs.close();
   return &pts;
 }
 
 int main() {
   string str;
   
-  static double (*landmarks)[2][83] = getPoints("example.txt");
-  static double (*destinations)[2][83] = getPoints("obama.txt");
+  static double (*landmarks)[2][83] = getPoints(ifstream("example.txt"));
+  static double (*destinations)[2][83] = getPoints(ifstream("obama.txt"));
 
   Mat image;
   
