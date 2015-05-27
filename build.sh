@@ -4,3 +4,4 @@ g++ -g -o bin read.cpp \
 -lopencv_highgui \
 -lopencv_imgproc \
 -L./ThinPlateSpline/ \
+-g\

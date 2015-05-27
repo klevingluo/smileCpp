@@ -8,12 +8,14 @@
 
 using namespace std;
 using namespace cv;
-
-vector<vector<double> > getPoints(string filename) {
+/**
+ * function that reads the landmark points from a file generated for the purpose
+ *
+ */
+vector<Point> getPoints(string filename) {
   vector<vector<double> > pts(2, vector<double>(83));
   string str;
-  string path = "images/";
-  path += filename;
+  string path = "images/" + filename;
   ifstream ifs(path.c_str());
   if (ifs.is_open()) {
     for (int i=0; i<83; i++){
@@ -26,39 +28,77 @@ vector<vector<double> > getPoints(string filename) {
     }
   }
   ifs.close();
-  return pts;
+  vector<Point> points(83);
+  for (int i=0; i<83; i++) {
+    points[i] = Point(pts[0][i], pts[1][i]);
+  }
+  return points;
 }
 
 int main() {
   string str;
   
-  vector<vector<double> > landmarks = getPoints("example.txt");
-  vector<vector<double> > destinations = getPoints("input.txt");
+  vector<Point> landmarks = getPoints("example.txt");
+  vector<Point> destinations = getPoints("input.txt");
 
-  Mat image;
+  CThinPlateSpline tps(landmarks, destinations);
+
+  Mat exampleRaw = imread("./images/example.jpg");
+  Mat input = imread("./images/input.jpg");
+  Mat example;
+  tps.warpImage(exampleRaw, example, INTER_CUBIC, BACK_WARP);
+  Rect crop(0,0, min(example.cols, input.cols), min(example.rows, input.rows));
+
+  example = example(crop);
+  input = input(crop);
+
+  imshow("example", example);
+  imshow("INPUT", input);
+
+  Mat lab;
+  cv::cvtColor(example, lab, cv::COLOR_BGR2Lab);
   
-  std::vector<Point> points, dests;
+  Mat *labChannels = new Mat[lab.channels()];
+  cv::split(lab, labChannels);
 
-  for(int i=0; i<83; i++) {
-    points.push_back(cv::Point((landmarks)[0][i], (landmarks)[1][i]));
-  }
+  imshow("greyscale", labChannels[0]);
 
+  Mat a(lab.rows, lab.cols, CV_8U);
   
-  for(int i=0; i<83; i++) {
-    dests.push_back(cv::Point((destinations)[0][i], (destinations)[1][i]));
-  }
+  Mat empty = Mat::zeros(lab.rows, lab.cols, CV_8U);
+  Mat ab[] = {empty, a, a};
+  int from_to[] = {1,1,2,2};
+  cv::mixChannels(labChannels, 3, ab, 3, from_to, 2);
+
+  Mat abimage;
+  cv::merge(ab, 3, abimage);
+
+  cvtColor(abimage, abimage, cv::COLOR_Lab2BGR);
+
+  imshow("ab layer", abimage);
 
 
-  CThinPlateSpline tps(points, dests);
+  Mat inputLab;
+  cv::cvtColor(input, inputLab, cv::COLOR_BGR2Lab);
+  
+  Mat *InputLabChannels = new Mat[inputLab.channels()];
+  cv::split(inputLab, InputLabChannels);
 
-  Mat img = imread("./images/example.jpg");
-  Mat canv = imread("./images/input.jpg");
-  Mat dst;
-  tps.warpImage(img,dst,INTER_AREA, FORWARD_WARP);
 
-  imshow("Original", img);
-  imshow("Warped", dst);
-  imshow("Model", canv);
+  Mat finalL = InputLabChannels[0].clone();
+  Mat finalA;
+  cv::addWeighted(InputLabChannels[1], 0.2, labChannels[1], 0.8, 0, finalA);
+  Mat finalB;
+  cv::addWeighted(InputLabChannels[2], 0.2, labChannels[2], 0.8, 0, finalB);
+
+  Mat finalimage[] = {finalL.clone(), finalA.clone(), finalB.clone()};
+
+  Mat finalMat;
+  cv::merge(finalimage, 3, finalMat);
+
+  cvtColor(finalMat, finalMat, cv::COLOR_Lab2BGR);
+
+  imshow("pre-result", finalMat);
 
   waitKey(0); 
   return 0;
