@@ -5,7 +5,6 @@
 #include <opencv2/imgproc/imgproc.hpp>
 #include <iostream>
 #include "./ThinPlateSpline/CThinPlateSpline.cpp"
-#include "./layers.cpp"
 
 using namespace std;
 using namespace cv;
@@ -59,6 +58,14 @@ int main() {
 
   imshow("example", example);
   imshow("INPUT", input);
+
+  Mat deriv;
+  cv::Scharr(input, deriv,  CV_16S, 0, 1, 7, -75, cv::BORDER_DEFAULT);
+  imshow("derivative", deriv);
+
+  Mat deriv2;
+  cv::Scharr(input, deriv2,  CV_16S, 1, 0, 7, -75, cv::BORDER_DEFAULT);
+  imshow("derivative2", deriv2);
   
   Mat lab;
   cv::cvtColor(example, lab, cv::COLOR_BGR2Lab);
@@ -104,11 +111,6 @@ int main() {
   cvtColor(finalMat, finalMat, cv::COLOR_Lab2BGR);
 
   imshow("pre-result", finalMat);
-
-  layers lay = layers(abimage, destinations);
-  anose * finalB;
-
-  imshow("anose",lay.getShapes());
 
   waitKey(0); 
   return 0;
