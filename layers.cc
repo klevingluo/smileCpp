@@ -64,17 +64,20 @@ class layers {
 
       fillConvexPoly(mask, &getPoly(forehead)[0], forehead.size(), 255,8,0);
       cv::GaussianBlur(mask, mask, Size(wt,ht*11), 0, 0);
+
       fillConvexPoly(mask, &getPoly(head)[0], head.size(), 255,8,0);
       fillConvexPoly(mask, &getPoly(mouth)[0], mouth.size(), 0,8,0);
       fillConvexPoly(mask, &getPoly(leftbrow)[0], leftbrow.size(), 75,8,0);     
       fillConvexPoly(mask, &getPoly(rightbrow)[0], rightbrow.size(), 75,8,0);
       cv::GaussianBlur(mask, mask, Size(wt*3,ht*3), 0,0);
+
       fillConvexPoly(mask, &getPoly(righteye)[0], righteye.size(), 0,8,0);
       fillConvexPoly(mask, &getPoly(lefteye)[0], lefteye.size(), 0,8,0);
       cv::GaussianBlur(mask, mask, Size(wt,ht), 0,0);
 
       return mask;
     }
+
     vector<Point> getPoly(vector<int> v) {
       vector<Point> result = vector<Point>(v.size());
       for(int i=0 ;i<v.size(); i++) {
