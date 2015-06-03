@@ -5,6 +5,7 @@
 #include <opencv2/imgproc/imgproc.hpp>
 #include <iostream>
 #include "./ThinPlateSpline/CThinPlateSpline.cpp"
+#include "./layers.cc"
 
 using namespace std;
 using namespace cv;
@@ -40,13 +41,13 @@ int main() {
   string str;
   
   // reads the landmarks from the file
-  vector<Point> landmarks = getPoints("example4.txt");
-  vector<Point> destinations = getPoints("input.txt");
+  vector<Point> landmarks = getPoints("example.txt");
+  vector<Point> destinations = getPoints("obama.txt");
 
   CThinPlateSpline tps(landmarks, destinations);
 
-  Mat exampleRaw = imread("./images/example4.png");
-  Mat input = imread("./images/input.jpg");
+  Mat exampleRaw = imread("./images/example.jpg");
+  Mat input = imread("./images/obama.jpg");
   Mat example;
 
   // warps the image
@@ -58,14 +59,6 @@ int main() {
 
   imshow("example", example);
   imshow("INPUT", input);
-
-  Mat deriv;
-  cv::Scharr(input, deriv,  CV_16S, 0, 1, 7, -75, cv::BORDER_DEFAULT);
-  imshow("derivative", deriv);
-
-  Mat deriv2;
-  cv::Scharr(input, deriv2,  CV_16S, 1, 0, 7, -75, cv::BORDER_DEFAULT);
-  imshow("derivative2", deriv2);
   
   Mat lab;
   cv::cvtColor(example, lab, cv::COLOR_BGR2Lab);
@@ -94,14 +87,21 @@ int main() {
   cv::cvtColor(input, inputLab, cv::COLOR_BGR2Lab);
   
   Mat *InputLabChannels = new Mat[inputLab.channels()];
+  
   cv::split(inputLab, InputLabChannels);
+  layers lay = layers(abimage, destinations);
 
+  Mat anose = lay.getShapes();
+  Mat bnose = anose*(-1) + 255;
+
+  imshow("anose",anose);
+  imshow("bnose", bnose);
 
   Mat finalL = InputLabChannels[0].clone();
   Mat finalA;
-  cv::addWeighted(InputLabChannels[1], 0.2, labChannels[1], 0.8, 0, finalA);
+  cv::addWeighted(InputLabChannels[1].mul(bnose)/255, 1, labChannels[1].mul(anose)/255, 1, 0, finalA);
   Mat finalB;
-  cv::addWeighted(InputLabChannels[2], 0.2, labChannels[2], 0.8, 0, finalB);
+  cv::addWeighted(InputLabChannels[2].mul(bnose)/255, 1, labChannels[2].mul(anose)/255, 1, 0, finalB);
 
   Mat finalimage[] = {finalL.clone(), finalA.clone(), finalB.clone()};
 
