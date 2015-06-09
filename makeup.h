@@ -3,7 +3,7 @@
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
-#include "./makeup.cc"
+#include "makeup.cc"
 
 using namespace std;
 using namespace cv;
@@ -15,9 +15,4 @@ using namespace cv;
 Mat TransferMakeup(String input_image, String input_landmarks,
                    String example_image, String example_landmarks);
 
-/**
- * a demo, soon to be removed
- */
-void Process();
-  
 #endif

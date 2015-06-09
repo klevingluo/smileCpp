@@ -4,8 +4,8 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 #include <iostream>
-#include "./ThinPlateSpline/CThinPlateSpline.cpp"
-#include "./layers.cc"
+#include "ThinPlateSpline/CThinPlateSpline.cpp"
+#include "layers.cc"
 
 class makeup {
 
@@ -34,12 +34,6 @@ class makeup {
 
     tps.warpImage(resize, example, INTER_CUBIC, BACK_WARP);
     
-    Rect crop(0,0, min(example.cols, input.cols), min(example.rows, input.rows));
-
-    // crops the images so they are the same size
-    example = example(crop);
-    input = input(crop);
-  
     // converts the example to lab colorspace
     cv::cvtColor(example, example, cv::COLOR_BGR2Lab);
   
@@ -57,8 +51,6 @@ class makeup {
 
     Mat anose = lay.getShapes();
     Mat bnose = anose*(-1) + 255;
-
-    imshow("mid1", anose);
 
     Mat finalL = InputLabChannels[0].clone();
     Mat finalA;
