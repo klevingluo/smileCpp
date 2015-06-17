@@ -12,13 +12,45 @@ using namespace cv;
 class face {
 
   public:
+
+    /**
+     * defines the valid features for selection
+     */
     enum feature {HEAD, FOREHEAD, MOUTH, NOSE, LEFT_BROW, RIGHT_BROW,
                   LEFT_EYE, RIGHT_EYE};
+
+    /**
+     * creates a face from the image specified and the landmarks file
+     * specified
+     */
     face(string imagePath, string landmarksPath);
+
+    /**
+     * creates a face from a mat and a list of landmarks
+     */
     face(Mat image, vector<Point> landmarks);
+
+    /**
+     * gets a mask of the feature f
+     */
     Mat getFeature(feature f);
+
+    /**
+     * gets the image of the face
+     */
     Mat getImage();
+
+    /**
+     * gets the list of landmarks of the face
+     */
     vector<Point> getLandmarks();
+
+  private:
+    Mat image;
+
+    vector<Point> landmarks;
+
+    void generateForehead();
 };
 
 #endif

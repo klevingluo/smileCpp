@@ -7,4 +7,4 @@ g++ -g -o faceTest.o ./faceTest.cc ./face.cc  \
 -L./ThinPlateSpline/ \
 -g\
 
-./faceTest
+./faceTest.o

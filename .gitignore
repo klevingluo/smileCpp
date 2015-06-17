@@ -1,3 +1,5 @@
+# ycm conf compiled
 .ycm_extra_conf_pyc
 
+# compiled files
 *.o

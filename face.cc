@@ -4,15 +4,12 @@
 #include <opencv2/imgproc/imgproc.hpp>
 #include <math.h>
 #include <vector>
-#include <iostream>
 #include "face.h"
 
 using namespace std;
 using namespace cv;
 
-Mat image;
-vector<Point> landmarks;
-
+// constants defined by facepp api
 const vector<int> head = {1,2,3,4,5,6,7,8,9,0,18,17,16,15,14,13,12,11,10};
 const vector<int> forehead = {11,10,83,84,85,85,86,87,88,89,90,1,2};
 const vector<int> mouth = {37,40,41,38,44,43,46,52,51,54,48,49};
@@ -21,8 +18,6 @@ const vector<int> leftbrow = {29,30,31,32,33,36,35,34};
 const vector<int> rightbrow = {75,76,77,78,79,82,81,80};
 const vector<int> lefteye = {21,22,19,23,25,28,26,27};
 const vector<int> righteye = {67,68,65,69,71,74,72,73};
-
-void generateForehead();
 
 face::face(string imagePath, string landmarksPath) {
   image = imread(imagePath);
@@ -40,7 +35,7 @@ face::face(string imagePath, string landmarksPath) {
     }
   }
   ifs.close();
-  vector<Point> points(90);
+  vector<Point> points(91);
   for (int i=0; i<83; i++) {
     points[i] = Point(pts[0][i], pts[1][i]);
   }
@@ -73,7 +68,7 @@ Mat face::getFeature(face::feature f) {
       outline = leftbrow;
       break;
     case RIGHT_BROW:
-      outline = righteye;
+      outline = rightbrow;
       break;
     case LEFT_EYE:
       outline = lefteye;
@@ -105,14 +100,14 @@ Mat face::getImage() {
   return image.clone();
 };
 
-void generateForehead() {
+void face::generateForehead() {
   int rad = sqrt(pow(landmarks[10].x - landmarks[1].x,2) + 
                  pow(landmarks[10].y - landmarks[1].y,2))/2;
 
   Point center = Point((landmarks[10].x + landmarks[1].x)/2, 
                        (landmarks[10].y + landmarks[1].y)/2);
-  for (int i=83; i<90; i++) {
-    landmarks[i] = Point(cos(M_PI/9 * i)*rad + center.x,
-                            -0.7 * sin(M_PI/9 * i)*rad + center.y);
+  for (int i=1; i<9; i++) {
+    landmarks[82 + i] = Point(cos(M_PI/9 * i)*rad + center.x,
+                         -0.8 * sin(M_PI/9 * i)*rad + center.y);
   }
 };

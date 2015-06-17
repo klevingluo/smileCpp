@@ -29,11 +29,14 @@ class layers {
       for(int i=0; i < 83; i++) {
         landmarks_[i] = landmarks[i];
       }
-      int rad = sqrt(pow(landmarks[10].x - landmarks[1].x,2) + pow(landmarks[10].y - landmarks[1].y,2))/2;
-      Point center = Point((landmarks[10].x + landmarks[1].x)/2, (landmarks[10].y + landmarks[1].y)/2);
+      int rad = sqrt(pow(landmarks[10].x - landmarks[1].x,2) + 
+                     pow(landmarks[10].y - landmarks[1].y,2))/2;
+      Point center = Point((landmarks[10].x + landmarks[1].x)/2, 
+                           (landmarks[10].y + landmarks[1].y)/2);
 
       for (int i=1; i<9; i++) {
-        landmarks_[82+i] = Point(cos(M_PI/9 * i)*rad + center.x,-0.7 * sin(M_PI/9 * i)*rad + center.y);
+        landmarks_[82+i] = Point(cos(M_PI/9 * i)*rad + center.x,
+                                 -0.7 * sin(M_PI/9 * i)*rad + center.y);
       }
       face_ = face.clone();
     };
@@ -69,11 +72,11 @@ class layers {
       fillConvexPoly(mask, &getPoly(mouth)[0], mouth.size(), 0,8,0);
       fillConvexPoly(mask, &getPoly(leftbrow)[0], leftbrow.size(), 75,8,0);     
       fillConvexPoly(mask, &getPoly(rightbrow)[0], rightbrow.size(), 75,8,0);
-      cv::GaussianBlur(mask, mask, Size(wt*3,ht*3), 0,0);
+      //cv::GaussianBlur(mask, mask, Size(wt*3,ht*3), 0,0);
 
       fillConvexPoly(mask, &getPoly(righteye)[0], righteye.size(), 0,8,0);
       fillConvexPoly(mask, &getPoly(lefteye)[0], lefteye.size(), 0,8,0);
-      cv::GaussianBlur(mask, mask, Size(wt,ht), 0,0);
+      //cv::GaussianBlur(mask, mask, Size(wt,ht), 0,0);
 
       return mask;
     }
