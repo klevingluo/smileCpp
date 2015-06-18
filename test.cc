@@ -13,10 +13,10 @@ vector<Point> GetPoints(string filename);
 
 int main() {
 
-  std::vector<cv::Point> inputmarks = GetPoints("A.txt");
+  std::vector<cv::Point> inputmarks = GetPoints("B.txt");
   std::vector<cv::Point> examplemarks = GetPoints("A*.txt");
 
-  cv::Mat input = cv::imread("./images/A.png");
+  cv::Mat input = cv::imread("./images/B.jpg");
   cv::Mat example = cv::imread("./images/A*.png");
 
   makeup eg = makeup();

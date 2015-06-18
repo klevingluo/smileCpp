@@ -108,6 +108,6 @@ void face::generateForehead() {
                        (landmarks[10].y + landmarks[1].y)/2);
   for (int i=1; i<9; i++) {
     landmarks[82 + i] = Point(cos(M_PI/9 * i)*rad + center.x,
-                         -0.8 * sin(M_PI/9 * i)*rad + center.y);
+                         -0.9 * sin(M_PI/9 * i)*rad + center.y);
   }
 };
