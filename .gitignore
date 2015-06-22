@@ -5,4 +5,4 @@
 *.o
 
 # build directory
-./build/
+build/
