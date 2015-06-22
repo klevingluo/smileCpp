@@ -3,3 +3,6 @@
 
 # compiled files
 *.o
+
+# build directory
+./build/*
