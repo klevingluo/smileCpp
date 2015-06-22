@@ -13,8 +13,17 @@ using namespace std;
 
 face process(face f);
 face warpTo(face from, face to);
+void testTransform();
 
-int main() {
+int main () {
+  testTransform();
+
+  return(0);
+}
+
+void testTransform() {
+
+  double scale = 7.0;
   face withMakeup("./images/A*.png", "./images/A*.txt");
   face WoMakeup("./images/A.png", "./images/A.txt");
   face input("./images/B.jpg", "./images/B.txt");
@@ -27,31 +36,41 @@ int main() {
 
   Mat alpha(makeup.rows, makeup.cols, CV_8UC3);
 
-  absdiff(makeup, skin, alpha);
+  Mat labmakeup;
+  Mat labskin;
+  cvtColor(makeup, labmakeup, cv::COLOR_BGR2Lab);
+  cvtColor(skin, labskin, cv::COLOR_BGR2Lab);
+  absdiff(labmakeup, labskin, alpha);
   cv::cvtColor(alpha, alpha, cv::COLOR_BGR2GRAY);
   cv::cvtColor(alpha, alpha, cv::COLOR_GRAY2BGR);
 
-  cout << "alpha mask created" << endl;
+  for(int i=0; i < alpha.rows; i++) {
+    for(int j=0; j < alpha.cols; j++) {
+      if(alpha.at<int>(Point(i, j)) < 80)
+        alpha.at<int>(Point(i, j)) = 0;
+    }
+  }
+  alpha *= scale;
 
-  Mat colors = makeup - skin;
+  cv::GaussianBlur(alpha, alpha, Size(21,21), 0,0);
+  
+  cout << "alpha mask created" << endl;
 
   Mat base = input.getImage();
 
   Mat finalim(makeup.rows, makeup.cols, CV_8UC3);
 
-  double scale = 1.0;
-  finalim = colors.mul(alpha, scale/255) + base.mul(cv::Scalar::all(255) - alpha, scale/255);
+  finalim = makeup.mul(alpha, 1.0/255) + base.mul(cv::Scalar::all(255) - alpha, 1.0/255);
   
   imshow("original", base);
   imshow("alpha", alpha);
   imshow("im1", makeup);
   imshow("im2", skin);
-  imshow("makeup", colors);
+  imshow("makeup", makeup.mul(alpha, 1.0/255));
   imshow("finalim", finalim);
   imshow("example", withMakeup.getImage());
 
   waitKey(0);
-  return 0;
 }
 
 face process(face f) {
@@ -63,8 +82,7 @@ face process(face f) {
                  f.getFeature(face::LEFT_EYE) + 
                  f.getFeature(face::RIGHT_EYE) +
                  f.getFeature(face::LEFT_BROW) + 
-                 f.getFeature(face::RIGHT_BROW) +
-                 f.getFeature(face::NOSE);
+                 f.getFeature(face::RIGHT_BROW);
 
   vector<Mat> layers;
   cv::split(mask, layers);
