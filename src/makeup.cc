@@ -4,7 +4,7 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 #include <iostream>
-#include "ThinPlateSpline/CThinPlateSpline.cpp"
+#include "ThinPlateSpline/CThinPlateSpline.h"
 #include "layers.cc"
 
 class makeup {

@@ -49,32 +49,9 @@ include src/CMakeFiles/maskTest.dir/progress.make
 # Include the compile flags for this target's objects.
 include src/CMakeFiles/maskTest.dir/flags.make
 
-src/CMakeFiles/maskTest.dir/faceTest.cc.o: src/CMakeFiles/maskTest.dir/flags.make
-src/CMakeFiles/maskTest.dir/faceTest.cc.o: ../src/faceTest.cc
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/kluo/workspace/smileCpp/build/CMakeFiles $(CMAKE_PROGRESS_1)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/maskTest.dir/faceTest.cc.o"
-	cd /home/kluo/workspace/smileCpp/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/maskTest.dir/faceTest.cc.o -c /home/kluo/workspace/smileCpp/src/faceTest.cc
-
-src/CMakeFiles/maskTest.dir/faceTest.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/maskTest.dir/faceTest.cc.i"
-	cd /home/kluo/workspace/smileCpp/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/kluo/workspace/smileCpp/src/faceTest.cc > CMakeFiles/maskTest.dir/faceTest.cc.i
-
-src/CMakeFiles/maskTest.dir/faceTest.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/maskTest.dir/faceTest.cc.s"
-	cd /home/kluo/workspace/smileCpp/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/kluo/workspace/smileCpp/src/faceTest.cc -o CMakeFiles/maskTest.dir/faceTest.cc.s
-
-src/CMakeFiles/maskTest.dir/faceTest.cc.o.requires:
-.PHONY : src/CMakeFiles/maskTest.dir/faceTest.cc.o.requires
-
-src/CMakeFiles/maskTest.dir/faceTest.cc.o.provides: src/CMakeFiles/maskTest.dir/faceTest.cc.o.requires
-	$(MAKE) -f src/CMakeFiles/maskTest.dir/build.make src/CMakeFiles/maskTest.dir/faceTest.cc.o.provides.build
-.PHONY : src/CMakeFiles/maskTest.dir/faceTest.cc.o.provides
-
-src/CMakeFiles/maskTest.dir/faceTest.cc.o.provides.build: src/CMakeFiles/maskTest.dir/faceTest.cc.o
-
 src/CMakeFiles/maskTest.dir/makeup.cc.o: src/CMakeFiles/maskTest.dir/flags.make
 src/CMakeFiles/maskTest.dir/makeup.cc.o: ../src/makeup.cc
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/kluo/workspace/smileCpp/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/kluo/workspace/smileCpp/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/maskTest.dir/makeup.cc.o"
 	cd /home/kluo/workspace/smileCpp/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/maskTest.dir/makeup.cc.o -c /home/kluo/workspace/smileCpp/src/makeup.cc
 
@@ -97,7 +74,7 @@ src/CMakeFiles/maskTest.dir/makeup.cc.o.provides.build: src/CMakeFiles/maskTest.
 
 src/CMakeFiles/maskTest.dir/mask.cc.o: src/CMakeFiles/maskTest.dir/flags.make
 src/CMakeFiles/maskTest.dir/mask.cc.o: ../src/mask.cc
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/kluo/workspace/smileCpp/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/kluo/workspace/smileCpp/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/maskTest.dir/mask.cc.o"
 	cd /home/kluo/workspace/smileCpp/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/maskTest.dir/mask.cc.o -c /home/kluo/workspace/smileCpp/src/mask.cc
 
@@ -120,7 +97,7 @@ src/CMakeFiles/maskTest.dir/mask.cc.o.provides.build: src/CMakeFiles/maskTest.di
 
 src/CMakeFiles/maskTest.dir/layers.cc.o: src/CMakeFiles/maskTest.dir/flags.make
 src/CMakeFiles/maskTest.dir/layers.cc.o: ../src/layers.cc
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/kluo/workspace/smileCpp/build/CMakeFiles $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/kluo/workspace/smileCpp/build/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/maskTest.dir/layers.cc.o"
 	cd /home/kluo/workspace/smileCpp/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/maskTest.dir/layers.cc.o -c /home/kluo/workspace/smileCpp/src/layers.cc
 
@@ -143,7 +120,7 @@ src/CMakeFiles/maskTest.dir/layers.cc.o.provides.build: src/CMakeFiles/maskTest.
 
 src/CMakeFiles/maskTest.dir/face.cc.o: src/CMakeFiles/maskTest.dir/flags.make
 src/CMakeFiles/maskTest.dir/face.cc.o: ../src/face.cc
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/kluo/workspace/smileCpp/build/CMakeFiles $(CMAKE_PROGRESS_5)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/kluo/workspace/smileCpp/build/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/maskTest.dir/face.cc.o"
 	cd /home/kluo/workspace/smileCpp/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/maskTest.dir/face.cc.o -c /home/kluo/workspace/smileCpp/src/face.cc
 
@@ -166,7 +143,7 @@ src/CMakeFiles/maskTest.dir/face.cc.o.provides.build: src/CMakeFiles/maskTest.di
 
 src/CMakeFiles/maskTest.dir/ThinPlateSpline/CThinPlateSpline.cpp.o: src/CMakeFiles/maskTest.dir/flags.make
 src/CMakeFiles/maskTest.dir/ThinPlateSpline/CThinPlateSpline.cpp.o: ../src/ThinPlateSpline/CThinPlateSpline.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/kluo/workspace/smileCpp/build/CMakeFiles $(CMAKE_PROGRESS_6)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/kluo/workspace/smileCpp/build/CMakeFiles $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/maskTest.dir/ThinPlateSpline/CThinPlateSpline.cpp.o"
 	cd /home/kluo/workspace/smileCpp/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/maskTest.dir/ThinPlateSpline/CThinPlateSpline.cpp.o -c /home/kluo/workspace/smileCpp/src/ThinPlateSpline/CThinPlateSpline.cpp
 
@@ -187,74 +164,22 @@ src/CMakeFiles/maskTest.dir/ThinPlateSpline/CThinPlateSpline.cpp.o.provides: src
 
 src/CMakeFiles/maskTest.dir/ThinPlateSpline/CThinPlateSpline.cpp.o.provides.build: src/CMakeFiles/maskTest.dir/ThinPlateSpline/CThinPlateSpline.cpp.o
 
-src/CMakeFiles/maskTest.dir/ThinPlateSpline/stdafx.cpp.o: src/CMakeFiles/maskTest.dir/flags.make
-src/CMakeFiles/maskTest.dir/ThinPlateSpline/stdafx.cpp.o: ../src/ThinPlateSpline/stdafx.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/kluo/workspace/smileCpp/build/CMakeFiles $(CMAKE_PROGRESS_7)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/maskTest.dir/ThinPlateSpline/stdafx.cpp.o"
-	cd /home/kluo/workspace/smileCpp/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/maskTest.dir/ThinPlateSpline/stdafx.cpp.o -c /home/kluo/workspace/smileCpp/src/ThinPlateSpline/stdafx.cpp
-
-src/CMakeFiles/maskTest.dir/ThinPlateSpline/stdafx.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/maskTest.dir/ThinPlateSpline/stdafx.cpp.i"
-	cd /home/kluo/workspace/smileCpp/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/kluo/workspace/smileCpp/src/ThinPlateSpline/stdafx.cpp > CMakeFiles/maskTest.dir/ThinPlateSpline/stdafx.cpp.i
-
-src/CMakeFiles/maskTest.dir/ThinPlateSpline/stdafx.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/maskTest.dir/ThinPlateSpline/stdafx.cpp.s"
-	cd /home/kluo/workspace/smileCpp/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/kluo/workspace/smileCpp/src/ThinPlateSpline/stdafx.cpp -o CMakeFiles/maskTest.dir/ThinPlateSpline/stdafx.cpp.s
-
-src/CMakeFiles/maskTest.dir/ThinPlateSpline/stdafx.cpp.o.requires:
-.PHONY : src/CMakeFiles/maskTest.dir/ThinPlateSpline/stdafx.cpp.o.requires
-
-src/CMakeFiles/maskTest.dir/ThinPlateSpline/stdafx.cpp.o.provides: src/CMakeFiles/maskTest.dir/ThinPlateSpline/stdafx.cpp.o.requires
-	$(MAKE) -f src/CMakeFiles/maskTest.dir/build.make src/CMakeFiles/maskTest.dir/ThinPlateSpline/stdafx.cpp.o.provides.build
-.PHONY : src/CMakeFiles/maskTest.dir/ThinPlateSpline/stdafx.cpp.o.provides
-
-src/CMakeFiles/maskTest.dir/ThinPlateSpline/stdafx.cpp.o.provides.build: src/CMakeFiles/maskTest.dir/ThinPlateSpline/stdafx.cpp.o
-
-src/CMakeFiles/maskTest.dir/ThinPlateSpline/ThinPlateSpline.cpp.o: src/CMakeFiles/maskTest.dir/flags.make
-src/CMakeFiles/maskTest.dir/ThinPlateSpline/ThinPlateSpline.cpp.o: ../src/ThinPlateSpline/ThinPlateSpline.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/kluo/workspace/smileCpp/build/CMakeFiles $(CMAKE_PROGRESS_8)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/maskTest.dir/ThinPlateSpline/ThinPlateSpline.cpp.o"
-	cd /home/kluo/workspace/smileCpp/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/maskTest.dir/ThinPlateSpline/ThinPlateSpline.cpp.o -c /home/kluo/workspace/smileCpp/src/ThinPlateSpline/ThinPlateSpline.cpp
-
-src/CMakeFiles/maskTest.dir/ThinPlateSpline/ThinPlateSpline.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/maskTest.dir/ThinPlateSpline/ThinPlateSpline.cpp.i"
-	cd /home/kluo/workspace/smileCpp/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/kluo/workspace/smileCpp/src/ThinPlateSpline/ThinPlateSpline.cpp > CMakeFiles/maskTest.dir/ThinPlateSpline/ThinPlateSpline.cpp.i
-
-src/CMakeFiles/maskTest.dir/ThinPlateSpline/ThinPlateSpline.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/maskTest.dir/ThinPlateSpline/ThinPlateSpline.cpp.s"
-	cd /home/kluo/workspace/smileCpp/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/kluo/workspace/smileCpp/src/ThinPlateSpline/ThinPlateSpline.cpp -o CMakeFiles/maskTest.dir/ThinPlateSpline/ThinPlateSpline.cpp.s
-
-src/CMakeFiles/maskTest.dir/ThinPlateSpline/ThinPlateSpline.cpp.o.requires:
-.PHONY : src/CMakeFiles/maskTest.dir/ThinPlateSpline/ThinPlateSpline.cpp.o.requires
-
-src/CMakeFiles/maskTest.dir/ThinPlateSpline/ThinPlateSpline.cpp.o.provides: src/CMakeFiles/maskTest.dir/ThinPlateSpline/ThinPlateSpline.cpp.o.requires
-	$(MAKE) -f src/CMakeFiles/maskTest.dir/build.make src/CMakeFiles/maskTest.dir/ThinPlateSpline/ThinPlateSpline.cpp.o.provides.build
-.PHONY : src/CMakeFiles/maskTest.dir/ThinPlateSpline/ThinPlateSpline.cpp.o.provides
-
-src/CMakeFiles/maskTest.dir/ThinPlateSpline/ThinPlateSpline.cpp.o.provides.build: src/CMakeFiles/maskTest.dir/ThinPlateSpline/ThinPlateSpline.cpp.o
-
 # Object files for target maskTest
 maskTest_OBJECTS = \
-"CMakeFiles/maskTest.dir/faceTest.cc.o" \
 "CMakeFiles/maskTest.dir/makeup.cc.o" \
 "CMakeFiles/maskTest.dir/mask.cc.o" \
 "CMakeFiles/maskTest.dir/layers.cc.o" \
 "CMakeFiles/maskTest.dir/face.cc.o" \
-"CMakeFiles/maskTest.dir/ThinPlateSpline/CThinPlateSpline.cpp.o" \
-"CMakeFiles/maskTest.dir/ThinPlateSpline/stdafx.cpp.o" \
-"CMakeFiles/maskTest.dir/ThinPlateSpline/ThinPlateSpline.cpp.o"
+"CMakeFiles/maskTest.dir/ThinPlateSpline/CThinPlateSpline.cpp.o"
 
 # External object files for target maskTest
 maskTest_EXTERNAL_OBJECTS =
 
-src/maskTest: src/CMakeFiles/maskTest.dir/faceTest.cc.o
 src/maskTest: src/CMakeFiles/maskTest.dir/makeup.cc.o
 src/maskTest: src/CMakeFiles/maskTest.dir/mask.cc.o
 src/maskTest: src/CMakeFiles/maskTest.dir/layers.cc.o
 src/maskTest: src/CMakeFiles/maskTest.dir/face.cc.o
 src/maskTest: src/CMakeFiles/maskTest.dir/ThinPlateSpline/CThinPlateSpline.cpp.o
-src/maskTest: src/CMakeFiles/maskTest.dir/ThinPlateSpline/stdafx.cpp.o
-src/maskTest: src/CMakeFiles/maskTest.dir/ThinPlateSpline/ThinPlateSpline.cpp.o
 src/maskTest: src/CMakeFiles/maskTest.dir/build.make
 src/maskTest: /usr/lib/x86_64-linux-gnu/libopencv_videostab.so.2.4.8
 src/maskTest: /usr/lib/x86_64-linux-gnu/libopencv_video.so.2.4.8
@@ -293,14 +218,11 @@ src/maskTest: src/CMakeFiles/maskTest.dir/link.txt
 src/CMakeFiles/maskTest.dir/build: src/maskTest
 .PHONY : src/CMakeFiles/maskTest.dir/build
 
-src/CMakeFiles/maskTest.dir/requires: src/CMakeFiles/maskTest.dir/faceTest.cc.o.requires
 src/CMakeFiles/maskTest.dir/requires: src/CMakeFiles/maskTest.dir/makeup.cc.o.requires
 src/CMakeFiles/maskTest.dir/requires: src/CMakeFiles/maskTest.dir/mask.cc.o.requires
 src/CMakeFiles/maskTest.dir/requires: src/CMakeFiles/maskTest.dir/layers.cc.o.requires
 src/CMakeFiles/maskTest.dir/requires: src/CMakeFiles/maskTest.dir/face.cc.o.requires
 src/CMakeFiles/maskTest.dir/requires: src/CMakeFiles/maskTest.dir/ThinPlateSpline/CThinPlateSpline.cpp.o.requires
-src/CMakeFiles/maskTest.dir/requires: src/CMakeFiles/maskTest.dir/ThinPlateSpline/stdafx.cpp.o.requires
-src/CMakeFiles/maskTest.dir/requires: src/CMakeFiles/maskTest.dir/ThinPlateSpline/ThinPlateSpline.cpp.o.requires
 .PHONY : src/CMakeFiles/maskTest.dir/requires
 
 src/CMakeFiles/maskTest.dir/clean:

@@ -1,12 +1,9 @@
 FILE(REMOVE_RECURSE
-  "CMakeFiles/maskTest.dir/faceTest.cc.o"
   "CMakeFiles/maskTest.dir/makeup.cc.o"
   "CMakeFiles/maskTest.dir/mask.cc.o"
   "CMakeFiles/maskTest.dir/layers.cc.o"
   "CMakeFiles/maskTest.dir/face.cc.o"
   "CMakeFiles/maskTest.dir/ThinPlateSpline/CThinPlateSpline.cpp.o"
-  "CMakeFiles/maskTest.dir/ThinPlateSpline/stdafx.cpp.o"
-  "CMakeFiles/maskTest.dir/ThinPlateSpline/ThinPlateSpline.cpp.o"
   "maskTest.pdb"
   "maskTest"
 )

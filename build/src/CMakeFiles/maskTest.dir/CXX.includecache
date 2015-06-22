@@ -6,19 +6,3 @@
 
 #IncludeRegexTransform: 
 
-/home/kluo/workspace/smileCpp/src/ThinPlateSpline/stdafx.cpp
-stdafx.h
-/home/kluo/workspace/smileCpp/src/ThinPlateSpline/stdafx.h
-
-/home/kluo/workspace/smileCpp/src/ThinPlateSpline/stdafx.h
-targetver.h
-/home/kluo/workspace/smileCpp/src/ThinPlateSpline/targetver.h
-stdio.h
--
-tchar.h
--
-
-/home/kluo/workspace/smileCpp/src/ThinPlateSpline/targetver.h
-SDKDDKVer.h
--
-

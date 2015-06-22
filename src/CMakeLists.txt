@@ -11,8 +11,6 @@ add_compile_options(
 -lopencv_highgui 
 -lopencv_imgproc)
 
-link_directories(./ThinPlateSpline/)
-
 file(GLOB SRCS *.cc *.h)
 file(GLOB TPS ./ThinPlateSpline/*)
 

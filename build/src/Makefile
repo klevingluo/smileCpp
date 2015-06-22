@@ -136,54 +136,6 @@ ThinPlateSpline/CThinPlateSpline.cpp.s:
 	cd /home/kluo/workspace/smileCpp/build && $(MAKE) -f src/CMakeFiles/maskTest.dir/build.make src/CMakeFiles/maskTest.dir/ThinPlateSpline/CThinPlateSpline.cpp.s
 .PHONY : ThinPlateSpline/CThinPlateSpline.cpp.s
 
-ThinPlateSpline/ThinPlateSpline.o: ThinPlateSpline/ThinPlateSpline.cpp.o
-.PHONY : ThinPlateSpline/ThinPlateSpline.o
-
-# target to build an object file
-ThinPlateSpline/ThinPlateSpline.cpp.o:
-	cd /home/kluo/workspace/smileCpp/build && $(MAKE) -f src/CMakeFiles/maskTest.dir/build.make src/CMakeFiles/maskTest.dir/ThinPlateSpline/ThinPlateSpline.cpp.o
-.PHONY : ThinPlateSpline/ThinPlateSpline.cpp.o
-
-ThinPlateSpline/ThinPlateSpline.i: ThinPlateSpline/ThinPlateSpline.cpp.i
-.PHONY : ThinPlateSpline/ThinPlateSpline.i
-
-# target to preprocess a source file
-ThinPlateSpline/ThinPlateSpline.cpp.i:
-	cd /home/kluo/workspace/smileCpp/build && $(MAKE) -f src/CMakeFiles/maskTest.dir/build.make src/CMakeFiles/maskTest.dir/ThinPlateSpline/ThinPlateSpline.cpp.i
-.PHONY : ThinPlateSpline/ThinPlateSpline.cpp.i
-
-ThinPlateSpline/ThinPlateSpline.s: ThinPlateSpline/ThinPlateSpline.cpp.s
-.PHONY : ThinPlateSpline/ThinPlateSpline.s
-
-# target to generate assembly for a file
-ThinPlateSpline/ThinPlateSpline.cpp.s:
-	cd /home/kluo/workspace/smileCpp/build && $(MAKE) -f src/CMakeFiles/maskTest.dir/build.make src/CMakeFiles/maskTest.dir/ThinPlateSpline/ThinPlateSpline.cpp.s
-.PHONY : ThinPlateSpline/ThinPlateSpline.cpp.s
-
-ThinPlateSpline/stdafx.o: ThinPlateSpline/stdafx.cpp.o
-.PHONY : ThinPlateSpline/stdafx.o
-
-# target to build an object file
-ThinPlateSpline/stdafx.cpp.o:
-	cd /home/kluo/workspace/smileCpp/build && $(MAKE) -f src/CMakeFiles/maskTest.dir/build.make src/CMakeFiles/maskTest.dir/ThinPlateSpline/stdafx.cpp.o
-.PHONY : ThinPlateSpline/stdafx.cpp.o
-
-ThinPlateSpline/stdafx.i: ThinPlateSpline/stdafx.cpp.i
-.PHONY : ThinPlateSpline/stdafx.i
-
-# target to preprocess a source file
-ThinPlateSpline/stdafx.cpp.i:
-	cd /home/kluo/workspace/smileCpp/build && $(MAKE) -f src/CMakeFiles/maskTest.dir/build.make src/CMakeFiles/maskTest.dir/ThinPlateSpline/stdafx.cpp.i
-.PHONY : ThinPlateSpline/stdafx.cpp.i
-
-ThinPlateSpline/stdafx.s: ThinPlateSpline/stdafx.cpp.s
-.PHONY : ThinPlateSpline/stdafx.s
-
-# target to generate assembly for a file
-ThinPlateSpline/stdafx.cpp.s:
-	cd /home/kluo/workspace/smileCpp/build && $(MAKE) -f src/CMakeFiles/maskTest.dir/build.make src/CMakeFiles/maskTest.dir/ThinPlateSpline/stdafx.cpp.s
-.PHONY : ThinPlateSpline/stdafx.cpp.s
-
 face.o: face.cc.o
 .PHONY : face.o
 
@@ -207,30 +159,6 @@ face.s: face.cc.s
 face.cc.s:
 	cd /home/kluo/workspace/smileCpp/build && $(MAKE) -f src/CMakeFiles/maskTest.dir/build.make src/CMakeFiles/maskTest.dir/face.cc.s
 .PHONY : face.cc.s
-
-faceTest.o: faceTest.cc.o
-.PHONY : faceTest.o
-
-# target to build an object file
-faceTest.cc.o:
-	cd /home/kluo/workspace/smileCpp/build && $(MAKE) -f src/CMakeFiles/maskTest.dir/build.make src/CMakeFiles/maskTest.dir/faceTest.cc.o
-.PHONY : faceTest.cc.o
-
-faceTest.i: faceTest.cc.i
-.PHONY : faceTest.i
-
-# target to preprocess a source file
-faceTest.cc.i:
-	cd /home/kluo/workspace/smileCpp/build && $(MAKE) -f src/CMakeFiles/maskTest.dir/build.make src/CMakeFiles/maskTest.dir/faceTest.cc.i
-.PHONY : faceTest.cc.i
-
-faceTest.s: faceTest.cc.s
-.PHONY : faceTest.s
-
-# target to generate assembly for a file
-faceTest.cc.s:
-	cd /home/kluo/workspace/smileCpp/build && $(MAKE) -f src/CMakeFiles/maskTest.dir/build.make src/CMakeFiles/maskTest.dir/faceTest.cc.s
-.PHONY : faceTest.cc.s
 
 layers.o: layers.cc.o
 .PHONY : layers.o
@@ -316,18 +244,9 @@ help:
 	@echo "... ThinPlateSpline/CThinPlateSpline.o"
 	@echo "... ThinPlateSpline/CThinPlateSpline.i"
 	@echo "... ThinPlateSpline/CThinPlateSpline.s"
-	@echo "... ThinPlateSpline/ThinPlateSpline.o"
-	@echo "... ThinPlateSpline/ThinPlateSpline.i"
-	@echo "... ThinPlateSpline/ThinPlateSpline.s"
-	@echo "... ThinPlateSpline/stdafx.o"
-	@echo "... ThinPlateSpline/stdafx.i"
-	@echo "... ThinPlateSpline/stdafx.s"
 	@echo "... face.o"
 	@echo "... face.i"
 	@echo "... face.s"
-	@echo "... faceTest.o"
-	@echo "... faceTest.i"
-	@echo "... faceTest.s"
 	@echo "... layers.o"
 	@echo "... layers.i"
 	@echo "... layers.s"

@@ -4,31 +4,16 @@
 src/CMakeFiles/maskTest.dir/ThinPlateSpline/CThinPlateSpline.cpp.o: ../src/ThinPlateSpline/CThinPlateSpline.cpp
 src/CMakeFiles/maskTest.dir/ThinPlateSpline/CThinPlateSpline.cpp.o: ../src/ThinPlateSpline/CThinPlateSpline.h
 
-src/CMakeFiles/maskTest.dir/ThinPlateSpline/ThinPlateSpline.cpp.o: ../src/ThinPlateSpline/CThinPlateSpline.h
-src/CMakeFiles/maskTest.dir/ThinPlateSpline/ThinPlateSpline.cpp.o: ../src/ThinPlateSpline/ThinPlateSpline.cpp
-src/CMakeFiles/maskTest.dir/ThinPlateSpline/ThinPlateSpline.cpp.o: /usr/include/opencv/cv.h
-src/CMakeFiles/maskTest.dir/ThinPlateSpline/ThinPlateSpline.cpp.o: /usr/include/opencv/cxcore.h
-src/CMakeFiles/maskTest.dir/ThinPlateSpline/ThinPlateSpline.cpp.o: /usr/include/opencv/highgui.h
-
-src/CMakeFiles/maskTest.dir/ThinPlateSpline/stdafx.cpp.o: ../src/ThinPlateSpline/stdafx.cpp
-src/CMakeFiles/maskTest.dir/ThinPlateSpline/stdafx.cpp.o: ../src/ThinPlateSpline/stdafx.h
-src/CMakeFiles/maskTest.dir/ThinPlateSpline/stdafx.cpp.o: ../src/ThinPlateSpline/targetver.h
-
 src/CMakeFiles/maskTest.dir/face.cc.o: ../src/face.cc
 src/CMakeFiles/maskTest.dir/face.cc.o: ../src/face.h
 
-src/CMakeFiles/maskTest.dir/faceTest.cc.o: ../src/face.h
-src/CMakeFiles/maskTest.dir/faceTest.cc.o: ../src/faceTest.cc
-
 src/CMakeFiles/maskTest.dir/layers.cc.o: ../src/layers.cc
 
-src/CMakeFiles/maskTest.dir/makeup.cc.o: ../src/ThinPlateSpline/CThinPlateSpline.cpp
 src/CMakeFiles/maskTest.dir/makeup.cc.o: ../src/ThinPlateSpline/CThinPlateSpline.h
 src/CMakeFiles/maskTest.dir/makeup.cc.o: ../src/layers.cc
 src/CMakeFiles/maskTest.dir/makeup.cc.o: ../src/makeup.cc
 
 src/CMakeFiles/maskTest.dir/mask.cc.o: ../src/./face.h
-src/CMakeFiles/maskTest.dir/mask.cc.o: ../src/ThinPlateSpline/CThinPlateSpline.cpp
 src/CMakeFiles/maskTest.dir/mask.cc.o: ../src/ThinPlateSpline/CThinPlateSpline.h
 src/CMakeFiles/maskTest.dir/mask.cc.o: ../src/mask.cc
 

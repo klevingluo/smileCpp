@@ -74,7 +74,7 @@ src/preinstall:
 src/CMakeFiles/maskTest.dir/all:
 	$(MAKE) -f src/CMakeFiles/maskTest.dir/build.make src/CMakeFiles/maskTest.dir/depend
 	$(MAKE) -f src/CMakeFiles/maskTest.dir/build.make src/CMakeFiles/maskTest.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/kluo/workspace/smileCpp/build/CMakeFiles  1 2 3 4 5 6 7 8
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/kluo/workspace/smileCpp/build/CMakeFiles  1 2 3 4 5
 	@echo "Built target maskTest"
 .PHONY : src/CMakeFiles/maskTest.dir/all
 
@@ -84,7 +84,7 @@ all: src/CMakeFiles/maskTest.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/maskTest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/kluo/workspace/smileCpp/build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kluo/workspace/smileCpp/build/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/maskTest.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/kluo/workspace/smileCpp/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/maskTest.dir/rule
