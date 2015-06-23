@@ -16,7 +16,8 @@ class face {
     /**
      * defines the valid features for selection
      */
-    enum feature {HEAD, FOREHEAD, MOUTH, NOSE, LEFT_BROW, RIGHT_BROW,
+    enum feature {HEAD, FOREHEAD, MOUTH, NOSE, 
+                  LEFT_BROW, RIGHT_BROW,
                   LEFT_EYE, RIGHT_EYE};
 
     /**
@@ -45,12 +46,24 @@ class face {
      */
     vector<Point> getLandmarks();
 
+    /**
+     * gets a mask of common makeup areas, for the 1 example algorithm
+     */
+    Mat getMask();
+
+    /**
+     * draws the landmark points of this face
+     */
+    Mat drawPoints();
+
+    /**
+     * warps this face to the geometry of another face
+     */
+    face warpTo(face to);
+
   private:
     Mat image;
-
     vector<Point> landmarks;
-
     void generateForehead();
 };
-
 #endif

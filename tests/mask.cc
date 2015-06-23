@@ -5,23 +5,23 @@
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
-#include "ThinPlateSpline/CThinPlateSpline.h"
-#include "./face.h"
+#include "../src/ThinPlateSpline/CThinPlateSpline.h"
+#include "../src/face.h"
 
 using namespace cv;
 using namespace std;
 
 face process(face f);
 face warpTo(face from, face to);
-void testTransform();
+void testMakeup();
 
 int main () {
-  testTransform();
+  testMakeup();
 
-  return(0);
+  return 0;
 }
 
-void testTransform() {
+void testMakeup() {
 
   double scale = 7.0;
   face withMakeup("./images/A*.png", "./images/A*.txt");

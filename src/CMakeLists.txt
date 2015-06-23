@@ -13,6 +13,3 @@ add_compile_options(
 
 file(GLOB SRCS *.cc *.h)
 file(GLOB TPS ./ThinPlateSpline/*)
-
-add_executable(maskTest ${SRCS} ${TPS})
-target_link_libraries(maskTest ${OpenCV_LIBS})

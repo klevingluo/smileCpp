@@ -4,6 +4,7 @@
 #include <opencv2/imgproc/imgproc.hpp>
 #include <math.h>
 #include <vector>
+#include "ThinPlateSpline/CThinPlateSpline.h"
 #include "face.h"
 
 using namespace std;
@@ -100,6 +101,41 @@ Mat face::getImage() {
   return image.clone();
 };
 
+Mat face::getMask() {
+  Mat mask = Mat(image.rows, image.cols, CV_8UC1);
+  for(int i=0; i<mask.cols; i++)
+    for(int j=0; j<mask.rows; j++)
+      mask.at<uchar>(Point(i,j)) = 0;
+
+  int wt = image.cols / 40;
+  int ht = image.rows / 40;
+  if(wt % 2 != 1) {
+    wt += 1;
+  }
+  if(ht % 2 != 1) {
+    ht += 1;
+  }
+
+  mask = getFeature(face::feature::FOREHEAD);
+
+  cv::GaussianBlur(mask, mask, Size(wt,ht*11), 0, 0);
+
+  mask = mask + getFeature(face::feature::HEAD)
+              - getFeature(face::feature::MOUTH)
+              - getFeature(face::feature::LEFT_BROW)
+              - getFeature(face::feature::RIGHT_BROW);
+
+  cv::GaussianBlur(mask, mask, Size(wt*3,ht*3), 0,0);
+
+  
+  mask = mask - getFeature(face::feature::LEFT_EYE)
+              - getFeature(face::feature::RIGHT_EYE);
+
+  cv::GaussianBlur(mask, mask, Size(wt,ht), 0,0);
+
+  return mask;
+}
+
 void face::generateForehead() {
   int rad = sqrt(pow(landmarks[10].x - landmarks[1].x,2) + 
                  pow(landmarks[10].y - landmarks[1].y,2))/2;
@@ -111,3 +147,35 @@ void face::generateForehead() {
                          -0.9 * sin(M_PI/9 * i)*rad + center.y);
   }
 };
+
+Mat face::drawPoints() {
+
+  Mat img = getImage();
+  for(int i=0; i< landmarks.size(); i++) {
+    cv::circle(img, landmarks[i], 2, cv::Scalar(0,255,0), -1);
+  }
+  return img;
+}
+
+face face::warpTo(face to) {
+  Mat warpedFrom;
+  Mat scaledFrom;
+  cv::resize(getImage(), scaledFrom, to.getImage().size(), 
+             0, 0, INTER_NEAREST);
+
+  vector<Point> scaledLandmarks = vector<Point>(getLandmarks().size());
+
+  double xScale = (0.0 + to.getImage().cols) / getImage().cols;
+  double yScale = (0.0 + to.getImage().rows) / getImage().rows;
+
+  for (int i=0; i < getLandmarks().size(); i++) {
+    double newx = getLandmarks()[i].x * xScale;
+    double newy = getLandmarks()[i].y * yScale;
+    scaledLandmarks[i] = cv::Point(newx, newy);
+  }
+
+  CThinPlateSpline tps(scaledLandmarks, to.getLandmarks());
+  tps.warpImage(scaledFrom, warpedFrom);
+  face newface(warpedFrom, to.getLandmarks());
+  return newface;
+}

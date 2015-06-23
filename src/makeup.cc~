@@ -8,7 +8,7 @@
 #include "ThinPlateSpline/CThinPlateSpline.h"
 #include "face.h"
 
-double scale = 7.0;
+
 
 cv::Mat makeup::TransferMakeup(Mat input_image, vector<Point> input_landmarks, 
                                Mat example_image, vector<Point> example_landmarks) {
