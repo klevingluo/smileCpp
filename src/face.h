@@ -61,7 +61,9 @@ class face {
      */
     face warpTo(face to);
 
-  private:
+    static face warpTo(face from, face to);
+
+  protected:
     Mat image;
     vector<Point> landmarks;
     void generateForehead();

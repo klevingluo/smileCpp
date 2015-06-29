@@ -157,20 +157,20 @@ Mat face::drawPoints() {
   return img;
 }
 
-face face::warpTo(face to) {
+face face::warpTo(face from, face to) {
   Mat warpedFrom;
   Mat scaledFrom;
-  cv::resize(getImage(), scaledFrom, to.getImage().size(), 
+  cv::resize(from.getImage(), scaledFrom, to.getImage().size(), 
              0, 0, INTER_NEAREST);
 
-  vector<Point> scaledLandmarks = vector<Point>(getLandmarks().size());
+  vector<Point> scaledLandmarks = vector<Point>(from.getLandmarks().size());
 
-  double xScale = (0.0 + to.getImage().cols) / getImage().cols;
-  double yScale = (0.0 + to.getImage().rows) / getImage().rows;
+  double xScale = (0.0 + to.getImage().cols) / from.getImage().cols;
+  double yScale = (0.0 + to.getImage().rows) / from.getImage().rows;
 
-  for (int i=0; i < getLandmarks().size(); i++) {
-    double newx = getLandmarks()[i].x * xScale;
-    double newy = getLandmarks()[i].y * yScale;
+  for (int i=0; i < from.getLandmarks().size(); i++) {
+    double newx = from.getLandmarks()[i].x * xScale;
+    double newy = from.getLandmarks()[i].y * yScale;
     scaledLandmarks[i] = cv::Point(newx, newy);
   }
 
@@ -178,4 +178,8 @@ face face::warpTo(face to) {
   tps.warpImage(scaledFrom, warpedFrom);
   face newface(warpedFrom, to.getLandmarks());
   return newface;
+}
+
+face face::warpTo(face to) {
+  return face::warpTo(*this, to);
 }

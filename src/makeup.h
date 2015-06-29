@@ -1,5 +1,5 @@
-#ifndef MAKEUP_LIBRARY
-#define MAKEUP_LIBRARY
+#ifndef MAKEUP_INTERFACE
+#define MAKEUP_INTERFACE
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
@@ -8,33 +8,8 @@
 using namespace std;
 using namespace cv;
 
-class makeup : public face{
+class makeup {
   public:
-    makeup(face example);
-
-    makeup(face makeup, face model);
-
-    face applyTo(face model);
-
-  private:
-    /**
-     * transfers the makeup from local image on path example_image with 
-     * facepp landmarks example_landmarks
-     * to local image on path input_image with landmarks imput_landmarks
-     * returns a cv::MAT
-     */
-    static Mat TransferMakeup(face input, face example);
-
-    /**
-     * transfers 
-     */
-    static Mat TransferMakeup(face input, face makeup, face model);
-  
-    /**
-     * calculates the makeup application
-     */
-    static face getMask(face makeup, face skin);
-
-    static face process(face f);
+    virtual face applyTo(face model) =0;
 };
 #endif
