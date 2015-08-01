@@ -10,9 +10,9 @@
 
 class exampleMakeup : public makeup, public face {
   public:
-    exampleMakeup(face example);
+    exampleMakeup(face);
                       
-    face applyTo(face model);
+    face applyTo(face);
 };
 
 #endif

@@ -10,6 +10,6 @@ using namespace cv;
 
 class makeup {
   public:
-    virtual face applyTo(face model) =0;
+    virtual face applyTo(face) =0;
 };
 #endif

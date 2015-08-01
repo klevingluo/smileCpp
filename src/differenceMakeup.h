@@ -8,12 +8,17 @@ class differenceMakeup : public makeup, public face {
     /**
      *
      */
-    differenceMakeup(face model, face makeup);
+    differenceMakeup(face, face);
 
     /**
-     *
+     * applies this makeup to the model with the specified weight
      */
-    face applyTo(face model);
+    face applyTo(face, double);
+
+    /**
+     * applies this makeup to the model with full weight
+     */
+    face applyTo(face);
 };
 
 #endif

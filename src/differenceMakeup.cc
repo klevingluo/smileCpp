@@ -43,7 +43,7 @@ differenceMakeup::differenceMakeup(face model, face makeup)
     cv::merge(masked, image);
   }
 
-face differenceMakeup::applyTo(face model) {
+face differenceMakeup::applyTo(face model, double weight) {
 
   face newface = warpTo(model);
   image = newface.getImage();
@@ -63,6 +63,8 @@ face differenceMakeup::applyTo(face model) {
   Mat alpha;
   cv::cvtColor(layers[3], alpha, cv::COLOR_GRAY2BGR);
 
+  alpha *= weight;
+
   imshow("makemask", makeup.mul(alpha, 1.0/255));
 
   cout << "final application" << endl;
@@ -71,6 +73,10 @@ face differenceMakeup::applyTo(face model) {
 
   return face(finalim, model.getLandmarks());
 };
+
+face differenceMakeup::applyTo(face model) {
+  return differenceMakeup::applyTo(model, 1.0);
+}
 
 Mat filter(Mat m) {
   m*= scale;

@@ -24,17 +24,17 @@ class face {
      * creates a face from the image specified and the landmarks file
      * specified
      */
-    face(string imagePath, string landmarksPath);
+    face(string, string);
 
     /**
      * creates a face from a mat and a list of landmarks
      */
-    face(Mat image, vector<Point> landmarks);
+    face(Mat, vector<Point>);
 
     /**
      * gets a mask of the feature f
      */
-    Mat getFeature(feature f);
+    Mat getFeature(feature);
 
     /**
      * gets the image of the face
@@ -59,9 +59,9 @@ class face {
     /**
      * warps this face to the geometry of another face
      */
-    face warpTo(face to);
+    face warpTo(face);
 
-    static face warpTo(face from, face to);
+    static face warpTo(face, face);
 
   protected:
     Mat image;
