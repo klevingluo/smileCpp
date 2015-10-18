@@ -65,18 +65,11 @@ face differenceMakeup::applyTo(face model, double weight) {
 
   alpha *= weight;
 
-  imshow("makemask", makeup.mul(alpha, 1.0/255));
-
-  cout << "final application" << endl;
   Mat finalim = makeup.mul(alpha, 1.0/255) + 
                 model.getImage().mul(cv::Scalar::all(255) - alpha, 1.0/255);
 
   return face(finalim, model.getLandmarks());
 };
-
-face differenceMakeup::applyTo(face model) {
-  return differenceMakeup::applyTo(model, 1.0);
-}
 
 Mat filter(Mat m) {
   m*= scale;

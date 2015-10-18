@@ -61,11 +61,15 @@ class face {
      */
     face warpTo(face);
 
+    /**
+     * warps one face to the goemetry of another face
+     */
     static face warpTo(face, face);
 
   protected:
     Mat image;
     vector<Point> landmarks;
+    // face++ api specific, used to generate a forehead for masking
     void generateForehead();
 };
 #endif

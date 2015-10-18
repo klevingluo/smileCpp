@@ -6,19 +6,14 @@
 class differenceMakeup : public makeup, public face {
   public:
     /**
-     *
+     * creates the makeup using a before and an after image
      */
     differenceMakeup(face, face);
 
     /**
      * applies this makeup to the model with the specified weight
      */
-    face applyTo(face, double);
+    face applyTo(face, double = 1.0);
 
-    /**
-     * applies this makeup to the model with full weight
-     */
-    face applyTo(face);
 };
-
 #endif

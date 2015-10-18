@@ -1,0 +1,1 @@
+file(COPY . DESTINATION ${PROJECT_BINARY_DIR}/images)

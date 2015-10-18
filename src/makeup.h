@@ -10,6 +10,9 @@ using namespace cv;
 
 class makeup {
   public:
-    virtual face applyTo(face) =0;
+    /**
+     * applies this makeup to a face with a specified weight
+     */
+    virtual face applyTo(face, double = 1.0) =0;
 };
 #endif
