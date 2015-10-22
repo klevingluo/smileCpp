@@ -1,0 +1,14 @@
+todo:
+- create learning examples using matlab face++ code and dlib template
+- modify learning code to allow for face++ facial landmark formats
+- create a new learning database
+- clean up, document some stuff
+- email handong about progress
+
+- improve TPS performance
+  - maybe warp parts separately
+
+- implement some way to save makeup masks
+
+notes:
+-DCMAKE_EXPORT_COMPILE_COMMANDS=ON

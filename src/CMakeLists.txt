@@ -13,3 +13,4 @@ add_compile_options(
 
 file(GLOB SRCS *.cc *.h)
 file(GLOB TPS ./ThinPlateSpline/*)
+file(GLOB dlib ./dlib/*)

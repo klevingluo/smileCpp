@@ -20,6 +20,7 @@
 #include <dlib/image_processing.h>
 #include <dlib/data_io.h>
 #include <iostream>
+#include <vector>
 
 using namespace dlib;
 using namespace std;

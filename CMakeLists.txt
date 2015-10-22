@@ -13,4 +13,5 @@ message("Binary Tree path: ${PROJECT_BINARY_DIR}")
 
 add_subdirectory(src)
 add_subdirectory(tests)
-add_subdirectory(images)
+
+set(CMAKE_EXPORT_COMPILE_COMMANDS=ON)

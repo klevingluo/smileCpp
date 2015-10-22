@@ -15,7 +15,6 @@ add_compile_options(
 -lopencv_imgproc
 -lpng)
 
-
 file(GLOB SRCS ../src/*.cc ../src/*.h)
 file(GLOB TPS ../src/ThinPlateSpline/*)
 file(GLOB DLIB ../src/dlib/*)
@@ -28,3 +27,11 @@ target_link_libraries(faceTest ${OpenCV_LIBS})
 
 add_executable(assignment_learning_ex assignment_learning_ex.cpp)
 target_link_libraries(assignment_learning_ex dlib)
+
+add_executable(training train_shape_predictor_ex.cc)
+target_link_libraries(training dlib)
+
+add_executable(testTrain face_landmark_detection_ex.cc)
+target_link_libraries(testTrain dlib)
+
+file(COPY ./faces DESTINATION .)

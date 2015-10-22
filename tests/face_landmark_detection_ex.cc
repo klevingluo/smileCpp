@@ -39,7 +39,7 @@
 
 
 #include <dlib/image_processing/frontal_face_detector.h>
-#include <dlib/image_processing/render_face_detections.h>
+#include "./overlay_points.h"
 #include <dlib/image_processing.h>
 #include <dlib/gui_widgets.h>
 #include <dlib/image_io.h>
@@ -111,7 +111,7 @@ int main(int argc, char** argv)
             // Now let's view our face poses on the screen.
             win.clear_overlay();
             win.set_image(img);
-            win.add_overlay(render_face_detections(shapes));
+            win.add_overlay(overlay_points(shapes));
 
             // We can also extract copies of each face that are cropped, rotated upright,
             // and scaled to a standard size as shown here:

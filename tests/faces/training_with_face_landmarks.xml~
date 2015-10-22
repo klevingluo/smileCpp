@@ -1,0 +1,186 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<?xml-stylesheet type='text/xsl' href='image_metadata_stylesheet.xsl'?>
+<dataset>
+<name>Training faces</name>
+<comment>These are images from the PASCAL VOC 2011 dataset.
+   The face landmarks are from dlib's shape_predictor_68_face_landmarks.dat
+   landmarking model.  The model uses the 68 landmark scheme used by the iBUG
+   300-W dataset.
+</comment>
+<images>
+  <image file='1.jpg'>
+    <box top='107' left='25' width='199' height='199'>
+<part name='1' x='130' y='335' />
+<part name='2' x='19' y='168' />
+<part name='3' x='20' y='193' />
+<part name='4' x='24' y='216' />
+<part name='5' x='29' y='240' />
+<part name='6' x='34' y='262' />
+<part name='7' x='46' y='282' />
+<part name='8' x='62' y='302' />
+<part name='9' x='81' y='317' />
+<part name='10' x='103' y='329' />
+<part name='11' x='228' y='167' />
+<part name='12' x='228' y='192' />
+<part name='13' x='226' y='216' />
+<part name='14' x='223' y='239' />
+<part name='15' x='216' y='262' />
+<part name='16' x='204' y='283' />
+<part name='17' x='192' y='301' />
+<part name='18' x='176' y='317' />
+<part name='19' x='157' y='328' />
+<part name='20' x='70' y='173' />
+<part name='21' x='71' y='167' />
+<part name='22' x='49' y='168' />
+<part name='23' x='59' y='171' />
+<part name='24' x='82' y='173' />
+<part name='25' x='73' y='166' />
+<part name='26' x='93' y='173' />
+<part name='27' x='70' y='160' />
+<part name='28' x='60' y='161' />
+<part name='29' x='82' y='163' />
+<part name='30' x='35' y='142' />
+<part name='31' x='52' y='141' />
+<part name='32' x='70' y='143' />
+<part name='33' x='88' y='147' />
+<part name='34' x='103' y='149' />
+<part name='35' x='51' y='133' />
+<part name='36' x='70' y='133' />
+<part name='37' x='89' y='136' />
+<part name='38' x='81' y='260' />
+<part name='39' x='126' y='285' />
+<part name='40' x='103' y='267' />
+<part name='41' x='95' y='272' />
+<part name='42' x='108' y='281' />
+<part name='43' x='150' y='266' />
+<part name='44' x='159' y='271' />
+<part name='45' x='143' y='280' />
+<part name='46' x='125' y='270' />
+<part name='47' x='171' y='259' />
+<part name='48' x='127' y='266' />
+<part name='49' x='118' y='256' />
+<part name='50' x='98' y='258' />
+<part name='51' x='106' y='264' />
+<part name='52' x='136' y='255' />
+<part name='53' x='154' y='256' />
+<part name='54' x='149' y='264' />
+<part name='55' x='127' y='257' />
+<part name='56' x='112' y='170' />
+<part name='57' x='102' y='211' />
+<part name='58' x='109' y='238' />
+<part name='59' x='126' y='242' />
+<part name='60' x='137' y='171' />
+<part name='61' x='146' y='210' />
+<part name='62' x='142' y='237' />
+<part name='63' x='94' y='228' />
+<part name='64' x='155' y='227' />
+<part name='65' x='124' y='227' />
+<part name='66' x='175' y='172' />
+<part name='67' x='174' y='166' />
+<part name='68' x='153' y='172' />
+<part name='69' x='163' y='171' />
+<part name='70' x='187' y='170' />
+<part name='71' x='173' y='165' />
+<part name='72' x='196' y='168' />
+<part name='73' x='173' y='159' />
+<part name='74' x='163' y='162' />
+<part name='75' x='186' y='161' />
+<part name='76' x='143' y='147' />
+<part name='77' x='161' y='145' />
+<part name='78' x='177' y='142' />
+<part name='79' x='194' y='138' />
+<part name='80' x='209' y='141' />
+<part name='81' x='159' y='134' />
+<part name='82' x='174' y='130' />
+<part name='83' x='194' y='130' />
+    </box>
+  </image>
+  <image file='2.png'>
+    <box top='95' left='108' width='279' height='279'>
+<part name='1' x='251' y='477' />
+<part name='2' x='61' y='179' />
+<part name='3' x='64' y='223' />
+<part name='4' x='75' y='262' />
+<part name='5' x='83' y='307' />
+<part name='6' x='92' y='345' />
+<part name='7' x='109' y='383' />
+<part name='8' x='134' y='419' />
+<part name='9' x='167' y='448' />
+<part name='10' x='203' y='469' />
+<part name='11' x='444' y='183' />
+<part name='12' x='438' y='223' />
+<part name='13' x='428' y='266' />
+<part name='14' x='422' y='307' />
+<part name='15' x='411' y='348' />
+<part name='16' x='390' y='387' />
+<part name='17' x='363' y='420' />
+<part name='18' x='333' y='448' />
+<part name='19' x='301' y='467' />
+<part name='20' x='162' y='189' />
+<part name='21' x='162' y='177' />
+<part name='22' x='126' y='180' />
+<part name='23' x='140' y='186' />
+<part name='24' x='183' y='186' />
+<part name='25' x='164' y='175' />
+<part name='26' x='202' y='185' />
+<part name='27' x='162' y='163' />
+<part name='28' x='142' y='168' />
+<part name='29' x='183' y='169' />
+<part name='30' x='90' y='135' />
+<part name='31' x='112' y='121' />
+<part name='32' x='141' y='117' />
+<part name='33' x='172' y='122' />
+<part name='34' x='198' y='123' />
+<part name='35' x='109' y='112' />
+<part name='36' x='141' y='104' />
+<part name='37' x='170' y='111' />
+<part name='38' x='187' y='355' />
+<part name='39' x='250' y='393' />
+<part name='40' x='223' y='362' />
+<part name='41' x='205' y='376' />
+<part name='42' x='228' y='389' />
+<part name='43' x='281' y='360' />
+<part name='44' x='299' y='374' />
+<part name='45' x='276' y='388' />
+<part name='46' x='251' y='363' />
+<part name='47' x='312' y='357' />
+<part name='48' x='251' y='359' />
+<part name='49' x='232' y='332' />
+<part name='50' x='206' y='341' />
+<part name='51' x='220' y='356' />
+<part name='52' x='267' y='332' />
+<part name='53' x='294' y='341' />
+<part name='54' x='282' y='357' />
+<part name='55' x='250' y='336' />
+<part name='56' x='229' y='182' />
+<part name='57' x='215' y='254' />
+<part name='58' x='228' y='300' />
+<part name='59' x='253' y='305' />
+<part name='60' x='277' y='183' />
+<part name='61' x='287' y='255' />
+<part name='62' x='280' y='301' />
+<part name='63' x='203' y='289' />
+<part name='64' x='303' y='291' />
+<part name='65' x='252' y='272' />
+<part name='66' x='347' y='189' />
+<part name='67' x='345' y='178' />
+<part name='68' x='303' y='184' />
+<part name='69' x='323' y='187' />
+<part name='70' x='366' y='187' />
+<part name='71' x='340' y='177' />
+<part name='72' x='380' y='182' />
+<part name='73' x='345' y='166' />
+<part name='74' x='324' y='170' />
+<part name='75' x='363' y='170' />
+<part name='76' x='307' y='124' />
+<part name='77' x='337' y='123' />
+<part name='78' x='365' y='119' />
+<part name='79' x='393' y='123' />
+<part name='80' x='413' y='139' />
+<part name='81' x='337' y='109' />
+<part name='82' x='367' y='106' />
+<part name='83' x='398' y='114' />
+    </box>
+  </image>
+</images>
+</dataset>

@@ -4,33 +4,7 @@ import ycm_core
 # These are the compilation flags that will be used in case there's no
 # compilation database set (by default, one is not set).
 # CHANGE THIS LIST OF FLAGS. YES, THIS IS THE DROID YOU HAVE BEEN LOOKING FOR.
-flags = [
-'-std=c++11',
-'-x',
-'c++',
-'-lopencv_core',
-'-lopencv_highgui',
-'-lopencv_imgproc',
-'-lopencd_photo',
-
-
-
-'-isystem',
-'../BoostParts',
-'-isystem',
-'.',
-'-I',
-'./ClangCompleter',
-'-isystem',
-'./tests/gmock/gtest',
-'-isystem',
-'./tests/gmock/gtest/include',
-'-isystem',
-'./tests/gmock',
-'-isystem',
-'./tests/gmock/include',
-]
-
+flags = []
 
 # Set this to the absolute path to the folder (NOT the file!) containing the
 # compile_commands.json file to use that instead of 'flags'. See here for
@@ -42,7 +16,7 @@ flags = [
 #
 # Most projects will NOT need to set this to anything; you can just change the
 # 'flags' list of compilation flags. Notice that YCM itself uses that approach.
-compilation_database_folder = ''
+compilation_database_folder = '/home/kluo/workspace/smileCpp/build/'
 
 if os.path.exists( compilation_database_folder ):
   database = ycm_core.CompilationDatabase( compilation_database_folder )
