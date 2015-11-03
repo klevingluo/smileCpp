@@ -1,0 +1,6 @@
+/home/kluo/workspace/smileCpp/tests/tests/CMakeFiles/assignment_learning_ex.dir
+/home/kluo/workspace/smileCpp/tests/tests/CMakeFiles/differenceTest.dir
+/home/kluo/workspace/smileCpp/tests/tests/dlib_build/CMakeFiles/dlib.dir
+/home/kluo/workspace/smileCpp/tests/tests/CMakeFiles/faceTest.dir
+/home/kluo/workspace/smileCpp/tests/tests/CMakeFiles/testTrain.dir
+/home/kluo/workspace/smileCpp/tests/tests/CMakeFiles/training.dir

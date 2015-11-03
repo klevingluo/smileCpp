@@ -6,6 +6,8 @@ find_package(OpenCV REQUIRED)
 
 include(../src/dlib/cmake)
 
+add_subdirectory(faces)
+
 set(CMake_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -g -std=c++11")
 
 add_compile_options(
@@ -33,5 +35,3 @@ target_link_libraries(training dlib)
 
 add_executable(testTrain face_landmark_detection_ex.cc)
 target_link_libraries(testTrain dlib)
-
-file(COPY ./faces DESTINATION .)

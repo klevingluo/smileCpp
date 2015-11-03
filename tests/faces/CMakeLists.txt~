@@ -1,1 +1,0 @@
-file(COPY ./ DESTINATION ../build/tests/faces)

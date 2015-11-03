@@ -14,7 +14,7 @@ namespace dlib
     {
         std::vector<image_window::overlay_circle> circles;
         const full_object_detection& d = dets[0];
-        for (unsigned long i = 0; i < dets.size(); ++i) {
+        for (unsigned long i = 0; i < 84; ++i) {
           circles.push_back(image_window::overlay_circle(d.part(i), 2, color));
         }
         return circles;
