@@ -6,6 +6,13 @@
 #include <vector>
 #include "ThinPlateSpline/CThinPlateSpline.h"
 #include "face.h"
+#include "./dlib/image_processing/full_object_detection.h"
+#include "./dlib/gui_widgets.h"
+#include <dlib/image_processing/frontal_face_detector.h>
+#include "./overlay_points.h"
+#include <dlib/image_processing.h>
+#include <dlib/gui_widgets.h>
+#include <dlib/image_io.h>
 
 using namespace std;
 using namespace cv;
@@ -49,6 +56,32 @@ face::face(Mat i, vector<Point> lm) {
   landmarks = lm;
   generateForehead();
 };
+
+face::face(string imPath) {
+
+  array2d<rgb_pixel> img;
+  load_image(img, imPath);
+
+  frontal_face_detector detector = get_frontal_face_detector();
+
+  shape_predictor sp;
+  "../build/tests/sp.dat" >> sp;
+
+  std::vector<rectangle> dets = detector(img);
+  
+  full_object_detection shape = sp(img, dets[j]);
+
+  vector<Point> points(91);
+
+  for (int i=0; i<83; i++) {
+    points[i] = shape.part(i);
+  }
+
+  image = imread(imPath);
+
+  landmarks = points;
+  generateForehead();
+}
 
 Mat face::getFeature(face::feature f) {
   vector<int> outline;
