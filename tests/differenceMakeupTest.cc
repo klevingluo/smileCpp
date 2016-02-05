@@ -7,9 +7,9 @@ using namespace std;
 
 int main() {
 
-  face input("../images/B.jpg", "../images/landmarks/B.txt");
-  face nomakeup("../images/A.png", "../images/landmarks/A.txt");
-  face makeup("../images/A*.png", "../images/landmarks/A*.txt");
+  face input("./images/B.jpg", "./images/landmarks/B.txt");
+  face nomakeup("./images/A.png", "./images/landmarks/A.txt");
+  face makeup("./images/A*.png", "./images/landmarks/A*.txt");
 
   differenceMakeup mk(nomakeup, makeup);
 

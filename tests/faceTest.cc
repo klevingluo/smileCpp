@@ -3,8 +3,8 @@
 
 int main() {
 
-  face test1("../images/A.png", "../images/landmarks/A.txt");
-  face test2("../images/obama.jpg", "../images/landmarks/obama.txt");
+  face test1("./images/A.png", "./images/landmarks/A.txt");
+  face test2("./images/obama.jpg", "./images/landmarks/obama.txt");
 
   // constructor test x 2
   // get feature test
