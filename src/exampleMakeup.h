@@ -12,7 +12,7 @@ class exampleMakeup : public makeup, public face {
   public:
     exampleMakeup(face);
                       
-    face applyTo(face);
+    face applyTo(face, double = 1.0);
 };
 
 #endif

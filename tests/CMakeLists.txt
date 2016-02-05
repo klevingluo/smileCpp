@@ -22,16 +22,13 @@ file(GLOB TPS ../src/ThinPlateSpline/*)
 file(GLOB DLIB ../src/dlib/*)
 
 add_executable(differenceTest ./differenceMakeupTest.cc ${SRCS} ${TPS})
-target_link_libraries(differenceTest ${OpenCV_LIBS})
+target_link_libraries(differenceTest ${OpenCV_LIBS} dlib)
 
 add_executable(faceTest ./faceTest.cc ${SRCS} ${TPS})
-target_link_libraries(faceTest ${OpenCV_LIBS})
-
-add_executable(assignment_learning_ex assignment_learning_ex.cpp)
-target_link_libraries(assignment_learning_ex dlib)
+target_link_libraries(faceTest ${OpenCV_LIBS} dlib)
 
 add_executable(training train_shape_predictor_ex.cc)
 target_link_libraries(training dlib)
 
-add_executable(testTrain face_landmark_detection_ex.cc)
-target_link_libraries(testTrain dlib)
+add_executable(makeupTest ./makeupTest.cc ${SRCS} ${TPS})
+target_link_libraries(makeupTest ${OpenCV_LIBS} dlib)

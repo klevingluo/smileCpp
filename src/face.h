@@ -32,6 +32,11 @@ class face {
     face(Mat, vector<Point>);
 
     /**
+     * creates a face using the dlib face recognizer
+     */
+    face(string);
+
+    /**
      * gets a mask of the feature f
      */
     Mat getFeature(feature);

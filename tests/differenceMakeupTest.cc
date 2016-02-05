@@ -18,6 +18,8 @@ int main() {
 
   cv::imshow("makeup",newface.getImage());
 
+  cv::imwrite("../../makeup.jpg", newface.getImage());
+
   cv::waitKey(0);
   return 0;
 }

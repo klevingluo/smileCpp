@@ -1,27 +1,34 @@
 #include "exampleMakeup.h"
 #include "ThinPlateSpline/CThinPlateSpline.h"
+#include <iostream>
+
+using namespace std;
+using namespace cv;
 
 exampleMakeup::exampleMakeup(face example) 
 : face(example.getImage(), example.getLandmarks()){
     }
                       
-face exampleMakeup::applyTo(face model) {
+face exampleMakeup::applyTo(face model, double weight) {
 
   Mat resize;
   cv::resize(this->getImage(), resize, model.getImage().size(), 0, 0, INTER_NEAREST);
 
   vector<Point> old_landmarks = this->getLandmarks();
-  vector<Point> dest_landmarks = vector<Point>(83);
+  vector<Point> dest_landmarks = vector<Point>(91);
+
   for (int i=0; i < old_landmarks.size(); i++) {
     double newx = old_landmarks[i].x * model.getImage().cols / this->getImage().cols;
     double newy = old_landmarks[i].y * model.getImage().rows / this->getImage().rows;
     dest_landmarks[i] = cv::Point(newx, newy);
   }
 
+
   CThinPlateSpline tps(dest_landmarks, model.getLandmarks());
 
   Mat example;
   tps.warpImage(resize, example, INTER_CUBIC, BACK_WARP);
+
   
   // converts the example to lab colorspace
   cv::cvtColor(example, example, cv::COLOR_BGR2Lab);

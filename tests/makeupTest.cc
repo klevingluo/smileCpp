@@ -1,26 +1,34 @@
 #include <vector>
 #include <string>
 #include <fstream>
+#include <iostream>
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 #include "../src/makeup.h"
 #include "../src/face.h"
+#include "../src/exampleMakeup.h"
 
 using namespace cv;
 using namespace std;
 
-
 int main() {
-    // static Mat TransferMakeup(cv}
 
-    // static face getMask(face mak
+  face test1("./images/A*.png", "./images/landmarks/A*.txt");
+  face test2("./images/obama.jpg", "./images/landmarks/obama.txt");
 
-    // static face warpTo(face from
+  imshow("example", test1.getImage());
+  imshow("input", test2.getImage());
 
-    // static face applyMakeup(face
+  exampleMakeup mkp(test1); 
 
-    // static face process(face f);
+  face makeup = mkp.applyTo(test2);
 
-    return 0;
+  imshow("output", makeup.getImage());
+
+  imwrite("../../output.jpg", makeup.getImage());
+
+  waitKey(0);
+    
+  return 0;
 }

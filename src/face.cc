@@ -4,6 +4,11 @@
 #include <opencv2/imgproc/imgproc.hpp>
 #include <math.h>
 #include <vector>
+#include <dlib/image_processing/frontal_face_detector.h>
+#include <dlib/image_processing.h>
+#include <dlib/gui_widgets.h>
+#include <dlib/image_io.h>
+#include <iostream>
 #include "ThinPlateSpline/CThinPlateSpline.h"
 #include "face.h"
 
@@ -48,6 +53,28 @@ face::face(Mat i, vector<Point> lm) {
   image = i;
   landmarks = lm;
   generateForehead();
+};
+
+face::face(string imagePath) {
+    dlib::frontal_face_detector detector = dlib::get_frontal_face_detector();
+    dlib::shape_predictor sp;
+    dlib::deserialize("./sp.dat") >> sp;
+
+    dlib::array2d<dlib::rgb_pixel> img;
+    load_image(img, imagePath);
+    pyramid_up(img);
+
+    std::vector<dlib::rectangle> dets = detector(img);
+
+    std::vector<dlib::full_object_detection> shapes;
+    dlib::full_object_detection shape = sp(img, dets[0]);
+    vector<Point> lm(91);
+    for (int i=0; i<83; i++) {
+      lm[i] = cv::Point(shape.part(i).x() / 2, shape.part(i).y() / 2);
+    }
+    landmarks = lm;
+    image = imread(imagePath);
+    generateForehead();
 };
 
 Mat face::getFeature(face::feature f) {
@@ -149,7 +176,6 @@ void face::generateForehead() {
 };
 
 Mat face::drawPoints() {
-
   Mat img = getImage();
   for(int i=0; i< landmarks.size(); i++) {
     cv::circle(img, landmarks[i], 2, cv::Scalar(0,255,0), -1);
