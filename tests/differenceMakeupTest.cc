@@ -16,7 +16,7 @@ int main() {
   std::cout << "applying makeup" << endl;
   face newface = mk.applyTo(input);
 
-  cv::imshow("maekup",newface.getImage());
+  cv::imshow("makeup",newface.getImage());
 
   cv::waitKey(0);
   return 0;

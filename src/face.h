@@ -27,11 +27,6 @@ class face {
     face(string, string);
 
     /**
-     * creates a face from an image using the dlib library
-     */
-    face(string);
-
-    /**
      * creates a face from a mat and a list of landmarks
      */
     face(Mat, vector<Point>);
