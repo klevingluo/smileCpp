@@ -1,4 +1,4 @@
-#include "../src/differenceMakeup.h"
+#include <differenceMakeup.h>
 #include <iostream>
 
 using namespace cv;

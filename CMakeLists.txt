@@ -4,14 +4,9 @@ cmake_minimum_required (VERSION 2.8.4)
 project(Makeup CXX)
 
 # version number
-set(VERSION_MAJOR 0)
-set(VERSION_MINOR 1)
+set(VERSION_MAJOR 1)
+set(VERSION_MINOR 0)
 
-add_definitions(-D DEF_REST_1)
-
-message("Binary Tree path: ${PROJECT_BINARY_DIR}")
-
-add_subdirectory(src)
 add_subdirectory(tests)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS=ON)

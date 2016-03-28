@@ -5,9 +5,9 @@
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
-#include "../src/makeup.h"
-#include "../src/face.h"
-#include "../src/exampleMakeup.h"
+#include <makeup.h>
+#include <face.h>
+#include <exampleMakeup.h>
 
 using namespace cv;
 using namespace std;
