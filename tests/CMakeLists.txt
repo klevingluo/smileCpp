@@ -23,3 +23,6 @@ target_link_libraries(makeupTest ${OpenCV_LIBS})
 
 add_executable(softLightBlendTest ./softLightBlendTest.cc ${SRCS} ${TPS})
 target_link_libraries(softLightBlendTest ${OpenCV_LIBS})
+
+add_executable(foundationTest ./foundationTest.cc ${SRCS} ${TPS})
+target_link_libraries(foundationTest ${OpenCV_LIBS})

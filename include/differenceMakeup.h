@@ -1,5 +1,6 @@
 #ifndef MAKEUP_DIFFERENCE
 #define MAKEUP_DIFFERENCE
+
 #include "makeup.h"
 #include "face.h"
 

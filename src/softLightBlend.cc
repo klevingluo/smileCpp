@@ -1,6 +1,4 @@
 #include <opencv2/core/core.hpp>
-#include <opencv2/highgui/highgui.hpp>
-#include <opencv2/imgproc/imgproc.hpp>
 #include <math.h>
 #include <softLightBlend.h>
 
@@ -14,8 +12,6 @@ using namespace std;
  *
  * img1 is the upper layer
  * img2 is the lower layer
- * mask is a greyscale image of the same size
- * charensity is the intensity of the blend
  */
 Mat softLightBlend(Mat img1, Mat img2) {
 

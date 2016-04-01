@@ -1,5 +1,5 @@
 #include <exampleMakeup.h>
-#include "ThinPlateSpline/CThinPlateSpline.h"
+#include <ThinPlateSpline/CThinPlateSpline.h>
 #include <iostream>
 
 using namespace std;
@@ -22,7 +22,6 @@ face exampleMakeup::applyTo(face model, double weight) {
     double newy = old_landmarks[i].y * model.getImage().rows / this->getImage().rows;
     dest_landmarks[i] = cv::Point(newx, newy);
   }
-
 
   CThinPlateSpline tps(dest_landmarks, model.getLandmarks());
 
